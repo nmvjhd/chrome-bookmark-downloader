@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp download && gulp concat"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^7.1.1",
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
     "gulp-postcss": "^7.0.0",
+    "gulp-replace": "^0.6.1",
+    "gulp-wrapper": "^1.0.0",
     "node-fetch": "^1.7.1"
   }
 }
