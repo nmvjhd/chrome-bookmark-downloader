@@ -25,11 +25,13 @@ function download(bookmark, outputPath) {
 gulp.task('download', async function () {
   const urlPrefix = 'http://www.tmlr.gov.cn/jsp/serch.jsp?item_id=';
   fs.mkdirSync('dist');
+  const downPromise = [];
   for(let i = 1000;i <= 9999;++i){
     const url = urlPrefix + i;
     const fileName = 'dist/' + i + '.html';
-    await downloadPage(url, fileName);
+    downPromise.push(downloadPage(url, fileName));
   }
+  return Promise.all(downPromise);
 });
 
 gulp.task('concat',function () {
